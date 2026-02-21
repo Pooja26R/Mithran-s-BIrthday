@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
     <title>🇺🇸 DEVAMITHRAN · 10th BIRTHDAY · CAPTAIN AMERICA 🇺🇸</title>
     <!-- Enhanced fonts for Captain America theme -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,20 +16,21 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent; /* remove grey tap on mobile */
         }
 
         body {
             font-family: 'Righteous', sans-serif;
             /* Enhanced Captain America background with Marvel elements */
             background: 
-                radial-gradient(circle at 20% 80%, rgba(196, 30, 58, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(0, 38, 100, 0.3) 0%, transparent 50%),
-                url('https://images.unsplash.com/photo-1635805737707-575885ab0820?w=1920&h=1080&fit=crop') center/cover;
+                radial-gradient(circle at 20% 80%, rgba(196, 30, 58, 0.4) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(0, 38, 100, 0.4) 0%, transparent 50%),
+                url('https://images.unsplash.com/photo-1635805737707-575885ab0820?w=1920&h=1080&fit=crop') center/cover fixed;
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 20px;
+            padding: 10px; /* reduced for mobile */
             color: #fff;
             position: relative;
             overflow-x: hidden;
@@ -41,19 +42,19 @@
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
             background: 
-                linear-gradient(45deg, rgba(196, 30, 58, 0.15) 0%, transparent 25%, transparent 75%, rgba(0, 38, 100, 0.15) 100%),
-                radial-gradient(circle at center, rgba(0, 0, 0, 0.4), rgba(0, 38, 100, 0.6));
+                linear-gradient(45deg, rgba(196, 30, 58, 0.2) 0%, transparent 25%, transparent 75%, rgba(0, 38, 100, 0.2) 100%),
+                radial-gradient(circle at center, rgba(0, 0, 0, 0.5), rgba(0, 38, 100, 0.7));
             pointer-events: none;
             z-index: 1;
             animation: shieldGlow 4s ease-in-out infinite alternate;
         }
 
         @keyframes shieldGlow {
-            0% { opacity: 0.8; }
+            0% { opacity: 0.7; }
             100% { opacity: 1; }
         }
 
-        /* Floating Marvel elements */
+        /* Floating elements hidden on very small to avoid clutter */
         .floating-elements {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -64,40 +65,41 @@
         .floating-shield {
             position: absolute;
             font-size: 2rem;
-            color: rgba(196, 30, 58, 0.3);
+            color: rgba(196, 30, 58, 0.25);
             animation: float 6s ease-in-out infinite;
         }
 
-        .floating-shield:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
-        .floating-shield:nth-child(2) { top: 20%; right: 15%; animation-delay: -2s; }
-        .floating-shield:nth-child(3) { bottom: 30%; left: 20%; animation-delay: -4s; }
-        .floating-shield:nth-child(4) { bottom: 15%; right: 10%; animation-delay: -1s; }
+        .floating-shield:nth-child(1) { top: 5%; left: 5%; animation-delay: 0s; }
+        .floating-shield:nth-child(2) { top: 15%; right: 8%; animation-delay: -2s; }
+        .floating-shield:nth-child(3) { bottom: 20%; left: 8%; animation-delay: -4s; }
+        .floating-shield:nth-child(4) { bottom: 10%; right: 5%; animation-delay: -1s; }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.3; }
-            50% { transform: translateY(-20px) rotate(180deg); opacity: 0.6; }
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.2; }
+            50% { transform: translateY(-15px) rotate(180deg); opacity: 0.4; }
         }
 
-        /* Enhanced main card with shield design */
+        /* Enhanced main card with shield design – fully responsive */
         .hero-card {
-            max-width: 1300px;
+            max-width: 1000px;
             width: 100%;
             background: 
                 linear-gradient(135deg, 
-                    rgba(0, 38, 100, 0.95) 0%, 
-                    rgba(11, 30, 51, 0.95) 25%,
-                    rgba(196, 30, 58, 0.95) 50%,
-                    rgba(11, 30, 51, 0.95) 75%,
-                    rgba(0, 38, 100, 0.95) 100%);
-            backdrop-filter: blur(15px);
-            border: 8px solid #F5F5F5;
+                    rgba(0, 38, 100, 0.97) 0%, 
+                    rgba(11, 30, 51, 0.97) 25%,
+                    rgba(196, 30, 58, 0.97) 50%,
+                    rgba(11, 30, 51, 0.97) 75%,
+                    rgba(0, 38, 100, 0.97) 100%);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 5px solid #F5F5F5;
             box-shadow: 
-                0 0 0 4px #C41E3A,
-                0 0 0 8px #F5F5F5,
-                0 0 0 12px #002664,
-                0 40px 80px rgba(0, 0, 0, 0.8),
-                inset 0 0 100px rgba(255, 255, 255, 0.1);
-            border-radius: 50px;
+                0 0 0 3px #C41E3A,
+                0 0 0 6px #F5F5F5,
+                0 0 0 9px #002664,
+                0 25px 50px rgba(0, 0, 0, 0.8),
+                inset 0 0 60px rgba(255, 255, 255, 0.1);
+            border-radius: 40px;
             overflow: hidden;
             z-index: 5;
             position: relative;
@@ -106,46 +108,42 @@
 
         @keyframes cardPulse {
             0% { transform: scale(1); }
-            100% { transform: scale(1.02); }
+            100% { transform: scale(1.01); }
         }
 
         .panel {
-            padding: 3rem 2.5rem;
+            padding: 2rem 1.5rem; /* adjusted for mobile */
             position: relative;
         }
 
-        /* Welcome panel with enhanced Captain America imagery */
+        /* Welcome panel adjustments */
         #welcomePanel {
             display: block;
             text-align: center;
             background: 
-                radial-gradient(circle at center, rgba(0, 38, 100, 0.1), transparent),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="20" fill="none" stroke="%23C41E3A" stroke-width="2" opacity="0.3"/><polygon points="50,30 55,40 65,40 57,48 60,58 50,52 40,58 43,48 35,40 45,40" fill="%23F5F5F5" opacity="0.2"/></svg>') center/200px;
+                radial-gradient(circle at center, rgba(0, 38, 100, 0.2), transparent),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="20" fill="none" stroke="%23C41E3A" stroke-width="2" opacity="0.2"/><polygon points="50,30 55,40 65,40 57,48 60,58 50,52 40,58 43,48 35,40 45,40" fill="%23F5F5F5" opacity="0.15"/></svg>') center/150px;
         }
 
         .cap-welcome-container {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 40px;
+            gap: 20px;
             flex-wrap: wrap;
-            margin-bottom: 40px;
-        }
-
-        .cap-shield-display {
-            position: relative;
+            margin-bottom: 25px;
         }
 
         .cap-shield-display img {
-            width: 280px;
-            height: 280px;
+            width: min(220px, 45vw);
+            height: min(220px, 45vw);
             border-radius: 50%;
-            border: 10px solid #F5F5F5;
+            border: 6px solid #F5F5F5;
             box-shadow: 
-                0 0 0 5px #C41E3A,
-                0 0 0 10px #F5F5F5,
-                0 0 0 15px #002664,
-                0 30px 60px rgba(0, 0, 0, 0.8);
+                0 0 0 4px #C41E3A,
+                0 0 0 8px #F5F5F5,
+                0 0 0 12px #002664,
+                0 20px 40px rgba(0, 0, 0, 0.8);
             animation: shieldRotate 20s linear infinite;
             object-fit: cover;
         }
@@ -155,23 +153,19 @@
             to { transform: rotate(360deg); }
         }
 
-        .welcome-text {
-            text-align: center;
-        }
-
         .main-title {
             font-family: 'Orbitron', monospace;
             font-weight: 900;
-            font-size: 5.5rem;
+            font-size: clamp(2.8rem, 12vw, 5rem);
             background: linear-gradient(45deg, #F5F5F5, #C41E3A, #002664, #F5F5F5);
             background-size: 300% 300%;
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
             animation: titleShine 3s ease-in-out infinite;
             line-height: 0.9;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
 
         @keyframes titleShine {
@@ -181,43 +175,43 @@
 
         .subtitle {
             font-family: 'Fredoka One', cursive;
-            font-size: 2rem;
+            font-size: clamp(1.5rem, 6vw, 2rem);
             color: #FFD700;
-            text-shadow: 3px 3px 0 #C41E3A, 6px 6px 0 #002664;
-            margin-bottom: 30px;
+            text-shadow: 2px 2px 0 #C41E3A, 4px 4px 0 #002664;
+            margin-bottom: 15px;
         }
 
         .access-panel {
             background: rgba(0, 38, 100, 0.8);
-            border: 4px solid #C41E3A;
+            border: 3px solid #C41E3A;
             border-radius: 30px;
-            padding: 2rem;
-            margin: 30px 0;
+            padding: 1.5rem 1rem;
+            margin: 20px 0;
             box-shadow: 
                 0 0 0 3px #F5F5F5,
-                0 20px 40px rgba(0, 0, 0, 0.5),
-                inset 0 0 30px rgba(255, 255, 255, 0.1);
+                0 15px 30px rgba(0, 0, 0, 0.6),
+                inset 0 0 25px rgba(255, 255, 255, 0.1);
         }
 
         .access-title {
             font-family: 'Russo One', sans-serif;
-            font-size: 2.5rem;
+            font-size: clamp(1.5rem, 5vw, 2.2rem);
             color: #F5F5F5;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             text-shadow: 2px 2px 0 #C41E3A;
         }
 
         .shield-icons {
             display: flex;
             justify-content: center;
-            gap: 30px;
-            margin: 20px 0;
+            gap: 20px;
+            margin: 15px 0;
         }
 
         .shield-icon {
-            font-size: 4rem;
+            font-size: clamp(2.5rem, 8vw, 3.5rem);
             color: #F5F5F5;
-            text-shadow: 0 0 20px #C41E3A;
+            text-shadow: 0 0 15px #C41E3A;
             animation: iconPulse 2s ease-in-out infinite alternate;
         }
 
@@ -228,81 +222,74 @@
 
         .input-group {
             display: flex;
-            gap: 20px;
+            gap: 12px;
             justify-content: center;
             flex-wrap: wrap;
-            margin-top: 30px;
+            margin-top: 20px;
         }
 
         #fullNameInput {
-            flex: 1;
-            max-width: 400px;
-            padding: 20px 30px;
-            font-size: 1.4rem;
+            flex: 1 1 250px;
+            min-width: 200px;
+            padding: 16px 20px;
+            font-size: 1.2rem;
             font-family: 'Righteous', sans-serif;
             background: rgba(11, 30, 51, 0.9);
-            border: 4px solid #C41E3A;
+            border: 3px solid #C41E3A;
             border-radius: 25px;
             color: #F5F5F5;
             outline: none;
             box-shadow: 
-                0 0 0 3px #F5F5F5,
-                inset 0 0 20px rgba(0, 0, 0, 0.3);
+                0 0 0 2px #F5F5F5,
+                inset 0 0 15px rgba(0, 0, 0, 0.5);
             transition: all 0.3s ease;
         }
 
         #fullNameInput:focus {
             border-color: #FFD700;
             box-shadow: 
-                0 0 0 3px #FFD700,
-                0 0 30px rgba(255, 215, 0, 0.5);
-            transform: scale(1.02);
+                0 0 0 2px #FFD700,
+                0 0 25px rgba(255, 215, 0, 0.5);
         }
 
         .unlock-button {
-            padding: 20px 40px;
-            font-size: 1.5rem;
+            padding: 16px 25px;
+            font-size: 1.3rem;
             font-family: 'Russo One', sans-serif;
-            font-weight: bold;
             background: linear-gradient(45deg, #C41E3A, #FF4567);
             border: none;
             border-radius: 25px;
             color: #F5F5F5;
             cursor: pointer;
             box-shadow: 
-                0 8px 0 #7A0E20,
-                0 12px 25px rgba(0, 0, 0, 0.4),
-                0 0 0 3px #F5F5F5;
+                0 5px 0 #7A0E20,
+                0 8px 18px rgba(0, 0, 0, 0.5),
+                0 0 0 2px #F5F5F5;
             transition: all 0.1s ease;
-            display: flex;
+            display: inline-flex;
             align-items: center;
-            gap: 15px;
+            gap: 8px;
+            -webkit-touch-callout: none;
         }
 
         .unlock-button:active {
-            transform: translateY(6px);
+            transform: translateY(4px);
             box-shadow: 
-                0 2px 0 #7A0E20,
-                0 6px 15px rgba(0, 0, 0, 0.4),
-                0 0 0 3px #F5F5F5;
+                0 1px 0 #7A0E20,
+                0 4px 12px rgba(0, 0, 0, 0.5),
+                0 0 0 2px #F5F5F5;
         }
 
         .error-message {
             color: #FFB3B3;
             font-weight: bold;
-            font-size: 1.3rem;
-            margin-top: 20px;
+            font-size: 1.2rem;
+            margin-top: 15px;
             text-shadow: 2px 2px 0 #C41E3A;
-            animation: errorShake 0.5s ease-in-out;
+            min-height: 2.5rem;
         }
 
-        @keyframes errorShake {
-            0%, 100% { transform: translateX(0); }
-            25% { transform: translateX(-10px); }
-            75% { transform: translateX(10px); }
-        }
-
-        /* Enhanced Surprise Panel */
+        /* Surprise Panel */
         #surprisePanel {
             display: none;
         }
@@ -310,197 +297,193 @@
         .birthday-header {
             text-align: center;
             background: linear-gradient(135deg, #C41E3A, #002664);
-            margin: -3rem -2.5rem 3rem -2.5rem;
-            padding: 2rem;
-            border-bottom: 8px solid #F5F5F5;
+            margin: -2rem -1.5rem 2rem -1.5rem;
+            padding: 1.5rem 1rem;
+            border-bottom: 5px solid #F5F5F5;
         }
 
         .birthday-title {
             font-family: 'Orbitron', monospace;
             font-weight: 900;
-            font-size: 4.5rem;
+            font-size: clamp(2.2rem, 8vw, 4rem);
             color: #F5F5F5;
             text-shadow: 
-                3px 3px 0 #002664,
-                6px 6px 0 #C41E3A,
-                9px 9px 20px rgba(0, 0, 0, 0.8);
-            margin-bottom: 10px;
+                2px 2px 0 #002664,
+                4px 4px 0 #C41E3A,
+                6px 6px 15px rgba(0, 0, 0, 0.8);
+            margin-bottom: 5px;
+            line-height: 1.1;
         }
 
         .hero-name-display {
             font-family: 'Fredoka One', cursive;
-            font-size: 3.5rem;
+            font-size: clamp(2rem, 7vw, 3.2rem);
             background: linear-gradient(45deg, #FFD700, #FFF, #FFD700);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            margin: 20px 0;
-            animation: nameGlow 2s ease-in-out infinite alternate;
+            margin: 10px 0;
+            word-break: break-word;
         }
 
-        @keyframes nameGlow {
-            0% { filter: drop-shadow(0 0 10px #FFD700); }
-            100% { filter: drop-shadow(0 0 30px #FFD700); }
-        }
-
-        /* ===== FIXED LARGER SQUARE SLIDESHOW ===== */
+        /* ===== FIXED LARGER SQUARE SLIDESHOW (mobile perfect) ===== */
         .memory-slideshow {
-            margin: 40px 0;
+            margin: 25px 0;
             position: relative;
         }
 
         .slideshow-frame {
             background: linear-gradient(45deg, #002664, #C41E3A);
-            padding: 15px;
-            border-radius: 30px;
+            padding: 10px;
+            border-radius: 25px;
             box-shadow: 
-                0 0 0 5px #F5F5F5,
-                0 25px 50px rgba(0, 0, 0, 0.6);
-            /* fixed size for the frame */
-            max-width: 700px;
+                0 0 0 3px #F5F5F5,
+                0 15px 30px rgba(0, 0, 0, 0.6);
+            max-width: 600px;
             margin: 0 auto;
+            width: 100%;
         }
 
         .slide {
             display: none;
             position: relative;
-            /* fixed size container */
             width: 100%;
-            aspect-ratio: 1 / 1;  /* perfect square */
+            aspect-ratio: 1 / 1; /* perfect square */
         }
 
         .slide.active-slide {
             display: block;
-            animation: slideReveal 0.8s ease-out;
+            animation: slideReveal 0.6s ease-out;
         }
 
         @keyframes slideReveal {
-            0% { opacity: 0; transform: scale(0.9) rotateY(90deg); }
-            100% { opacity: 1; transform: scale(1) rotateY(0deg); }
+            0% { opacity: 0; transform: scale(0.9); }
+            100% { opacity: 1; transform: scale(1); }
         }
 
-        /* images fill the square, no distortion, centered */
         .slide img {
             width: 100%;
             height: 100%;
-            object-fit: cover;      /* ensures full coverage without stretching */
-            object-position: center; 
-            border-radius: 20px;
-            border: 4px solid #F5F5F5;
+            object-fit: cover;
+            border-radius: 18px;
+            border: 3px solid #F5F5F5;
             display: block;
         }
 
         .slide-caption {
             position: absolute;
-            bottom: 20px;
-            left: 20px;
-            right: 20px;
-            background: rgba(0, 38, 100, 0.9);
-            padding: 15px;
-            border-radius: 15px;
+            bottom: 10px;
+            left: 10px;
+            right: 10px;
+            background: rgba(0, 38, 100, 0.95);
+            padding: 10px 5px;
+            border-radius: 20px;
             color: #F5F5F5;
-            font-size: 1.5rem;
+            font-size: clamp(1rem, 4vw, 1.4rem);
             font-weight: bold;
             text-align: center;
             border: 2px solid #C41E3A;
             backdrop-filter: blur(2px);
+            -webkit-backdrop-filter: blur(2px);
         }
 
         .slide-controls {
             display: flex;
             justify-content: center;
             gap: 20px;
-            margin-top: 20px;
+            margin-top: 15px;
         }
 
         .slide-btn {
-            width: 60px;
-            height: 60px;
+            width: 55px;
+            height: 55px;
             border-radius: 50%;
             background: linear-gradient(45deg, #C41E3A, #FF4567);
             border: 3px solid #F5F5F5;
             color: #F5F5F5;
             font-size: 1.5rem;
             cursor: pointer;
-            box-shadow: 0 5px 0 #7A0E20, 0 8px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 0 #7A0E20, 0 6px 12px rgba(0, 0, 0, 0.4);
             transition: all 0.1s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            -webkit-tap-highlight-color: transparent;
         }
 
         .slide-btn:active {
             transform: translateY(3px);
-            box-shadow: 0 2px 0 #7A0E20, 0 5px 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 1px 0 #7A0E20, 0 3px 8px rgba(0, 0, 0, 0.4);
         }
 
-        /* Enhanced birthday message */
         .birthday-message {
-            background: linear-gradient(135deg, rgba(0, 38, 100, 0.8), rgba(196, 30, 58, 0.8));
-            border: 6px solid #F5F5F5;
+            background: linear-gradient(135deg, rgba(0, 38, 100, 0.85), rgba(196, 30, 58, 0.85));
+            border: 4px solid #F5F5F5;
             border-radius: 25px;
-            padding: 3rem;
-            margin: 40px 0;
-            font-size: 1.6rem;
-            line-height: 1.8;
+            padding: 1.8rem 1.2rem;
+            margin: 30px 0;
+            font-size: clamp(1.1rem, 4vw, 1.4rem);
+            line-height: 1.6;
             box-shadow: 
-                0 0 0 3px #C41E3A,
-                0 20px 40px rgba(0, 0, 0, 0.5),
-                inset 0 0 50px rgba(255, 255, 255, 0.1);
+                0 0 0 2px #C41E3A,
+                0 15px 30px rgba(0, 0, 0, 0.6),
+                inset 0 0 30px rgba(255, 255, 255, 0.1);
         }
 
         .birthday-message p {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
             color: #F5F5F5;
         }
 
         .birthday-message strong {
             color: #FFD700;
-            font-size: 1.1em;
-            text-shadow: 2px 2px 0 #C41E3A;
+            text-shadow: 1px 1px 0 #C41E3A;
         }
 
         .signature-section {
             text-align: center;
-            margin: 40px 0;
+            margin: 30px 0;
             font-family: 'Fredoka One', cursive;
-            font-size: 2.5rem;
+            font-size: clamp(1.5rem, 5vw, 2.2rem);
             color: #FFD700;
-            text-shadow: 3px 3px 0 #C41E3A, 6px 6px 0 #002664;
+            text-shadow: 2px 2px 0 #C41E3A, 4px 4px 0 #002664;
+            word-break: break-word;
         }
 
         .reset-button {
             background: linear-gradient(45deg, #002664, #0047AB);
             border: 4px solid #F5F5F5;
-            padding: 15px 40px;
-            border-radius: 25px;
+            padding: 15px 25px;
+            border-radius: 30px;
             color: #F5F5F5;
             font-size: 1.3rem;
             font-weight: bold;
             cursor: pointer;
             transition: all 0.3s ease;
-            margin: 20px auto;
+            margin: 15px auto 5px;
             display: block;
+            width: fit-content;
+            -webkit-tap-highlight-color: transparent;
         }
 
-        .reset-button:hover {
+        .reset-button:active {
             background: linear-gradient(45deg, #C41E3A, #FF4567);
-            transform: scale(1.05);
+            transform: scale(0.98);
         }
 
-        /* Responsive design */
-        @media (max-width: 768px) {
-            .main-title { font-size: 3.5rem; }
-            .birthday-title { font-size: 3rem; }
-            .hero-name-display { font-size: 2.5rem; }
-            .cap-shield-display img { width: 200px; height: 200px; }
-            .input-group { flex-direction: column; align-items: center; }
-            .panel { padding: 2rem 1.5rem; }
-            .slideshow-frame { max-width: 100%; }
-            .slide-caption { font-size: 1.2rem; }
+        /* small screen tweaks */
+        @media (max-width: 480px) {
+            .panel { padding: 1.5rem 1rem; }
+            .birthday-header { margin: -1.5rem -1rem 1.5rem -1rem; }
+            .cap-shield-display img { width: 170px; height: 170px; }
+            .floating-shield { font-size: 1.5rem; }
+            .slide-btn { width: 48px; height: 48px; }
         }
     </style>
 </head>
 <body>
-    <!-- Floating Marvel elements -->
+    <!-- Floating Marvel elements (fewer on small screens, but still ok) -->
     <div class="floating-elements">
         <div class="floating-shield"><i class="fas fa-shield"></i></div>
         <div class="floating-shield"><i class="fas fa-star"></i></div>
@@ -528,16 +511,16 @@
 
             <div class="access-panel">
                 <div class="access-title">
-                    <i class="fas fa-user-shield"></i> IDENTIFY YOURSELF, SOLDIER
+                    <i class="fas fa-user-shield"></i> IDENTIFY, SOLDIER
                 </div>
-                <p style="color: #FFD700; font-size: 1.2rem; margin-bottom: 20px;">
+                <p style="color: #FFD700; font-size: 1.1rem; margin-bottom: 15px;">
                     Only true Avengers know the secret identity...
                 </p>
                 
                 <div class="input-group">
-                    <input type="text" id="fullNameInput" placeholder="Enter your full name..." >
+                    <input type="text" id="fullNameInput" placeholder="Enter your full name..." value="devamithran">
                     <button class="unlock-button" id="unlockBtn">
-                        <i class="fas fa-unlock"></i> UNLOCK MISSION
+                        <i class="fas fa-unlock"></i> UNLOCK
                     </button>
                 </div>
                 <div id="errorMessage" class="error-message"></div>
@@ -551,21 +534,21 @@
                 <div class="hero-name-display">
                     <i class="fas fa-star"></i> CAPTAIN DEVAMITHRAN <i class="fas fa-star"></i>
                 </div>
-                <div style="font-size: 2rem; color: #FFD700; font-weight: bold;">
+                <div style="font-size: 1.6rem; color: #FFD700; font-weight: bold;">
                     THE FIRST AVENGER TURNS 10!
                 </div>
             </div>
 
-            <!-- FIXED LARGER SQUARE SLIDESHOW (now properly sized and cropped) -->
+            <!-- SQUARE SLIDESHOW (perfect on all screens) -->
             <div class="memory-slideshow">
                 <div class="slideshow-frame">
                     <div class="slide active-slide">
                         <img src="three.JPG" alt="Hero Training">
-                        <div class="slide-caption">🦸‍♂️ HERO TRAINING ACADEMY 🦸‍♂️</div>
+                        <div class="slide-caption">🦸 HERO TRAINING ACADEMY 🦸</div>
                     </div>
                     <div class="slide">
                         <img src="two.JPG" alt="Super Powers">
-                        <div class="slide-caption">⚡ DISCOVERING SUPER POWERS ⚡</div>
+                        <div class="slide-caption">⚡ DISCOVERING POWERS ⚡</div>
                     </div>
                     <div class="slide">
                         <img src="twelve.jpeg" alt="Captain America">
@@ -581,23 +564,23 @@
                     </div>
                     <div class="slide">
                         <img src="nine.jpeg" alt="Victory">
-                        <div class="slide-caption">🏆 VICTORY CELEBRATION 🏆</div>
+                        <div class="slide-caption">🏆 HERO MOMENT 🏆</div>
                     </div>
                     <div class="slide">
                         <img src="eleven.jpeg" alt="Victory">
-                        <div class="slide-caption">🏆 VICTORY CELEBRATION 🏆</div>
+                        <div class="slide-caption">🏆 SUPER VICTORY 🏆</div>
                     </div>
                     <div class="slide">
                         <img src="eight.jpeg" alt="Victory">
-                        <div class="slide-caption">🏆 VICTORY CELEBRATION 🏆</div>
+                        <div class="slide-caption">🏆 LEGENDARY 🏆</div>
                     </div>
                     <div class="slide">
                         <img src="seven.jpg" alt="Victory">
-                        <div class="slide-caption">🏆 VICTORY CELEBRATION 🏆</div>
+                        <div class="slide-caption">🏆 STAR SPANGLED 🏆</div>
                     </div>
                     <div class="slide">
                         <img src="ten.jpeg" alt="Victory">
-                        <div class="slide-caption">🏆 VICTORY CELEBRATION 🏆</div>
+                        <div class="slide-caption">🏆 FINALE 🏆</div>
                     </div>
                 </div>
                 <div class="slide-controls">
@@ -609,24 +592,18 @@
             <!-- Birthday Message -->
             <div class="birthday-message">
                 <p><strong>🎊 Happy 10th Birthday, My Amazing Little Hero! 🎊</strong></p>
-                
                 <p>You are growing up so fast and becoming smarter, braver, and more incredible every single day. Just like Captain America, you have a heart full of courage and kindness that inspires everyone around you!</p>
-                
-                <p>I'm sending you all my love and the biggest superhero hugs today! ❤️ May this special year bring you endless adventures, amazing discoveries, tons of laughter, and success in everything you set your mind to.</p>
-                
+                <p>I'm sending you all my love and the biggest superhero hugs today! ❤️ May this special year bring you endless adventures, amazing discoveries, tons of laughter, and success.</p>
                 <p>I hope you get all the wonderful things you deserve - new dreams to chase, new victories to celebrate, and the strength to achieve everything you've ever wished for. Never stop believing in yourself, because you truly are a superhero!</p>
-                
                 <p>Enjoy your special day to the fullest! Eat lots of birthday cake, have amazing adventures, and create memories that will last forever!</p>
-                
-                <p><strong>🎂 Once again, HAPPY BIRTHDAY, CAPTAIN DEVAMITHRAN! 🎂<br>
-                With all my love and superhero wishes! 💖</strong></p>
+                <p><strong>🎂 HAPPY BIRTHDAY, CAPTAIN DEVAMITHRAN! 🎂<br>With all my love! 💖</strong></p>
             </div>
 
             <div class="signature-section">
                 <i class="fas fa-heart" style="color: #C41E3A;"></i> 
-                Your Biggest Fan & Loving Cousin 
+                Your Biggest Fan & Cousin 
                 <i class="fas fa-heart" style="color: #C41E3A;"></i>
-                <div style="font-size: 1.5rem; margin-top: 10px; color: #F5F5F5;">
+                <div style="font-size: 1.3rem; margin-top: 8px; color: #F5F5F5;">
                     ⭐ "With great birthday comes great celebration!" ⭐
                 </div>
             </div>
@@ -672,7 +649,7 @@
                 const name = nameInput.value.trim().toLowerCase();
                 
                 if (name === '') {
-                    errorMsg.textContent = '🚫 Enter your name to access Avengers database!';
+                    errorMsg.textContent = '🚫 Enter your name to access!';
                     return;
                 }
                 
@@ -701,7 +678,6 @@
             });
             resetBtn.addEventListener('click', resetMission);
             
-            // SLIDE BUTTONS: now move exactly one image per click (prev/next)
             prevBtn.addEventListener('click', function(e) {
                 e.preventDefault();
                 prevSlide();
@@ -712,10 +688,10 @@
                 nextSlide();
             });
             
-            // Auto slideshow (optional, but you can keep it - it won't interfere with manual clicks)
+            // gentle auto-slide (doesn't block manual)
             setInterval(nextSlide, 5000);
             
-            // Initialize
+            // init
             welcomePanel.style.display = 'block';
             surprisePanel.style.display = 'none';
         })();
